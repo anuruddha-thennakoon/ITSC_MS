@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="profitloss" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="f6a58ecb-d94f-4887-8799-1b1059a099ff">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="sales" class="java.lang.String"/>
+	<parameter name="opening_stock" class="java.lang.String"/>
+	<parameter name="purchase" class="java.lang.String"/>
+	<parameter name="closing_stock" class="java.lang.String"/>
+	<parameter name="gross_profit" class="java.lang.String"/>
+	<parameter name="opening_stock_plus_purchase" class="java.lang.String"/>
+	<parameter name="opening_stock_plus_purchase_minus_closing_stock" class="java.lang.String"/>
+	<parameter name="expenses" class="java.lang.String"/>
+	<parameter name="net_profit" class="java.lang.String"/>
+	<parameter name="from_date" class="java.lang.String"/>
+	<parameter name="to_date" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="348" splitType="Stretch">
+			<staticText>
+				<reportElement x="141" y="273" width="312" height="35" uuid="5d26aa8d-e352-485e-963a-7e4363f0698d"/>
+				<textElement textAlignment="Center">
+					<font size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Profit and Loss Account]]></text>
+			</staticText>
+			<image scaleImage="FillFrame">
+				<reportElement stretchType="RelativeToBandHeight" x="188" y="7" width="224" height="186" uuid="32796c77-2b1d-4e54-9393-18e73bbb118c"/>
+				<imageExpression><![CDATA["G:\\DOCUMENTS\\exploit\\PROJECTS\\ITSC\\src\\reports\\itsc.jpg"]]></imageExpression>
+			</image>
+			<line>
+				<reportElement x="0" y="347" width="540" height="1" uuid="3d83782c-032a-46b6-abd9-a29eb63b1a21"/>
+			</line>
+			<staticText>
+				<reportElement x="12" y="318" width="46" height="20" uuid="5be0467b-a54a-4224-a5e9-79554ce72303"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[From :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="58" y="318" width="158" height="20" uuid="6e682f62-4ace-487b-9018-303dc5291f71"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{from_date}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="235" y="318" width="46" height="20" uuid="e1eda906-71d4-48ae-802b-d389a55c995c"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[To :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="281" y="318" width="172" height="20" uuid="45153fa1-be87-41d1-b6ec-7cef966c5dc3"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{to_date}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="84" y="198" width="389" height="22" uuid="897c794a-e6df-4796-9cc3-0a64dedfd129"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[No 9F, Near the Bus Stand]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="84" y="219" width="389" height="22" uuid="379a6622-199e-411a-8350-e11085fdd34d"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nikaweratiya]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="84" y="240" width="389" height="20" uuid="5019ccb6-14ee-4593-83f1-bda8af70bf1e"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[071 869 60 44 , 037 226 03 88 ]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="371" splitType="Stretch">
+			<line direction="BottomUp">
+				<reportElement x="384" y="0" width="1" height="369" uuid="a33e9803-73bd-40e5-ab32-3103fb5d5ea8"/>
+			</line>
+			<line direction="BottomUp">
+				<reportElement x="216" y="0" width="1" height="369" uuid="e5be383b-e4ea-4397-8557-07d4d5571429"/>
+			</line>
+			<textField>
+				<reportElement x="235" y="40" width="135" height="20" uuid="278301f8-4ba6-4ce4-9e71-c3b393b2a004"/>
+				<textElement textAlignment="Right">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{opening_stock}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="235" y="72" width="135" height="20" uuid="58ac5c1e-1c28-43f7-accd-4518172209b4"/>
+				<textElement textAlignment="Right">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{purchase}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="235" y="150" width="135" height="20" uuid="f42f9b68-fe1d-4376-b48f-eb63b5da10df"/>
+				<textElement textAlignment="Right">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{closing_stock}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="396" y="222" width="135" height="20" uuid="e7c44e55-b62a-412a-95c2-1d701ab00a79"/>
+				<textElement textAlignment="Right">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{gross_profit}]]></textFieldExpression>
+			</textField>
+			<line direction="BottomUp">
+				<reportElement x="539" y="0" width="1" height="369" uuid="4422eea5-0cf7-4430-ae65-d709871cf2bb"/>
+			</line>
+			<textField>
+				<reportElement x="396" y="6" width="135" height="20" uuid="1d033d4b-fb03-47da-ad7d-eefd67545606"/>
+				<textElement textAlignment="Right">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{sales}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="235" y="106" width="135" height="20" uuid="edc13c1b-2112-4601-b80c-000979e83a68"/>
+				<textElement textAlignment="Right">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{opening_stock_plus_purchase}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="235" y="98" width="132" height="1" uuid="dd846d13-364d-4179-98e5-fc3876d1ce0a"/>
+			</line>
+			<line>
+				<reportElement x="235" y="175" width="135" height="1" uuid="2313b462-ad2d-47e4-934f-8dc04d7791bc"/>
+			</line>
+			<textField>
+				<reportElement x="396" y="191" width="135" height="20" uuid="ac276553-c49a-41d5-af0f-0be313709495"/>
+				<textElement textAlignment="Right">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{opening_stock_plus_purchase_minus_closing_stock}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="396" y="215" width="134" height="1" uuid="59e4f9a7-34f0-4dc8-9ec5-3177425e9c40"/>
+			</line>
+			<staticText>
+				<reportElement x="12" y="6" width="129" height="20" uuid="bc03ef56-eceb-4d0f-819b-e9dcd850f1f9"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Sales]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="12" y="40" width="129" height="20" uuid="b254a9f7-23ca-4694-b394-203ba27b1300"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Opening stock]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="12" y="72" width="129" height="20" uuid="5c08074c-af46-4283-82bb-42e821249b30"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Purchase]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="12" y="150" width="129" height="20" uuid="76178c51-9e46-45b2-8feb-397558f99b40"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Closing stock]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="12" y="222" width="129" height="20" uuid="f7b92dc8-7807-44e6-9619-db5608d71622"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Gross profit]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="395" y="307" width="135" height="20" uuid="1dd429ea-5004-469d-a5a3-3cf89984c1df"/>
+				<textElement textAlignment="Right">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{expenses}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="13" y="271" width="129" height="20" uuid="459e40bf-7961-4198-a106-ae4e0c67df0f"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Expenses]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="396" y="335" width="135" height="20" uuid="7a6c50df-90b7-4fd2-b08a-12921e66aa40"/>
+				<textElement textAlignment="Right">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{net_profit}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="13" y="335" width="129" height="20" uuid="a535f462-983b-4666-8aa5-25f6745bd0cd"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Net profit]]></text>
+			</staticText>
+			<line>
+				<reportElement x="396" y="358" width="135" height="1" uuid="4d9e26e2-91cd-4977-9a0f-b56568cb7286"/>
+				<graphicElement>
+					<pen lineWidth="2.75" lineStyle="Double"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="396" y="331" width="135" height="1" uuid="28387f81-4599-42ca-837e-e8051c63e0ad"/>
+			</line>
+			<textField>
+				<reportElement x="235" y="271" width="135" height="20" uuid="60851bca-c4c9-4331-b635-ce34a1efcea0"/>
+				<textElement textAlignment="Right">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{expenses}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="235" y="296" width="135" height="1" uuid="d8ef7059-7f5e-49a4-9e85-f3f9cfa9e628"/>
+			</line>
+			<line direction="BottomUp">
+				<reportElement x="1" y="1" width="1" height="369" uuid="5cd6fb58-673f-4e34-8f37-034bcbc58989"/>
+			</line>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="30" splitType="Stretch">
+			<staticText>
+				<reportElement x="3" y="5" width="547" height="20" uuid="cc3012c2-70e8-4f49-8eea-c6eb9cd30025"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[software by BitSlash  071 37 616 87]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="4" width="554" height="1" uuid="ed15ce2b-0c6f-422d-9356-6899757afd88"/>
+			</line>
+			<line>
+				<reportElement x="0" y="25" width="554" height="1" uuid="d4d49a5b-b192-4d12-a9d5-07538b6705eb"/>
+			</line>
+		</band>
+	</pageFooter>
+</jasperReport>
